@@ -9,8 +9,37 @@
         <Setter Property="TextElement.FontSize" Value="16"/>
     </Style>
 
+    <Style TargetType="Button" x:Key="s_button">
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Background" Value="Aquamarine"/>
+    </Style>
+    
     <Style TargetType="TreeViewItem">
-        <Setter Property="HeaderedItemsControl.Header" Value="Temp value"/>
         <Setter Property="Control.FontSize" Value="14"/>
     </Style>
+
+    <ControlTemplate TargetType="TreeViewItem" x:Key="side_menu_item">
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <DataTemplate x:Key="lv_item_template">
+        <StackPanel Margin="5">
+            <TextBlock FontSize="16" Text="{Binding Title}"/>
+            <TextBlock FontSize="8" Text="{Binding Tag}"/>
+        </StackPanel>
+    </DataTemplate>
+    
+    <ControlTemplate TargetType="Button" x:Key="primary_button">
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="AliceBlue"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
 </ResourceDictionary>

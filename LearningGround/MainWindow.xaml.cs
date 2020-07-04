@@ -1,4 +1,5 @@
 ﻿using LearningGround.Entities;
+using LearningGround.Screens;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,35 +23,24 @@ namespace LearningGround
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<Record> records;
-
         public MainWindow()
         {
             InitializeComponent();
-            FillData();
         }
 
-        public void OpenRecord(object sender, SelectionChangedEventArgs e)
+        private void WorkspaceClick(object sender, RoutedEventArgs e)
         {
-            tabControl.Items.Add("123");
+            DataContext = new Workspace();
         }
 
-        private void FillData()
+        private void InformationClick(object sender, RoutedEventArgs e)
         {
-            tv_menu.ItemsSource = new[] { "Детское", "Подростковое", "Взрослое" };
+            DataContext = new Information();
+        }
 
-            records = new ObservableCollection<Record>
-            {
-                new Record("Заголовок 1", "Животные", "Абвгд"),
-                new Record("Заголовок 2", "Животные", "Абвгд"),
-                new Record("Заголовок 3", "Животные", "Абвгд"),
-                new Record("Заголовок 4", "Фрукты", "Абвгд"),
-                new Record("Заголовок 5", "Фрукты", "Абвгд"),
-                new Record("Заголовок 6", "Цветы", "Абвгд"),
-                new Record("Заголовок 7", "Цветы", "Абвгд"),
-            };
-
-            lv_search_result.ItemsSource = records;
+        private void CollectionClick(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Collections();
         }
     }
 }

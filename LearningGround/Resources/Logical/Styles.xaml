@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:LearningGround.Interface.Resources">
+                    xmlns:local="clr-namespace:LearningGround.Resources.Logical">
 
     <Style x:Key="SearchField">
         <Setter Property="Control.Margin" Value="10"/>
